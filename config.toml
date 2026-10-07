@@ -1,0 +1,42 @@
+[app]
+# Standard Telegram Bot API upload limit is about 50 MB.
+# Larger files are offered as a direct-download button instead.
+video_upload_limit_mb = 49
+max_concurrent_downloads = 2
+max_user_concurrent_downloads = 1
+
+[rbac]
+# This bot is intended as a personal/simple downloader.
+# Commands are public so no Telegram numeric user ID is needed in GitHub.
+public_commands = [
+  "help",
+  "convert_link",
+  "preview_video",
+  "fetch_metadata",
+  "download_video",
+  "extract_audio",
+  "download_gallery",
+]
+
+convert_link_limit = 60
+extract_audio_limit = 10
+download_video_limit = 20
+preview_video_limit = 30
+fetch_metadata_limit = 60
+
+[rbac.roles.admin]
+permissions = ["*"]
+
+[rbac.roles.standard]
+permissions = [
+  "convert_link",
+  "preview_video",
+  "fetch_metadata",
+  "download_video",
+  "extract_audio",
+  "download_gallery",
+]
+
+[rbac.users]
+
+[rbac.chats]
